@@ -1,4 +1,6 @@
 import java.io.File;
+import java.io.IOException;
+
 public class Ficheros {
     public static String eDirectorio(String directorio) {
         File ruta = new File(directorio);
@@ -30,5 +32,22 @@ public class Ficheros {
         } else {
             return "Non se puido crear";
         }
+    }
+
+    public static String creaFicheiro(String dirName, String fileName) throws IOException {
+        File fichero = new File (dirName, fileName);
+        File rAbsoluta = new File (dirName);
+        if (rAbsoluta.exists()) {
+            if (fichero.exists()) {
+                return "Ya existe el fichero";
+            }
+            if (fichero.createNewFile()) {
+                return "Creado con exito";
+            }
+
+        } else {
+            return "La ruta no existe";
+        }
+        return "";
     }
 }
