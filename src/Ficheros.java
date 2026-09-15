@@ -134,7 +134,17 @@ public class Ficheros {
 
         String amosar = mContido("/home/dam26/IdeaProjects/Practica 1 AD/arquivosdir");
 
-        String permisos = modoAcceso("arquivosdir", "products1");
-        String longitud = calcularLonxitude("arquivosdir", "products1");
+        String permisos = modoAcceso("arquivosdir", "productsº1");
+        String longitud = calcularLonxitude("C:\\Users\\Carlos SG\\IdeaProjects\\P1-1-AD 2\\arquivosdir", "productsº1");
+
+        String pLectura = mLectura("C:\\Users\\Carlos SG\\IdeaProjects\\P1-1-AD 2\\arquivosdir", "productsº1");
+
+        String pEscritura = mEscritura("C:\\Users\\Carlos SG\\IdeaProjects\\P1-1-AD 2\\arquivosdir", "productsº1");
+
+        String borrar = borrarFichero("C:\\Users\\Carlos SG\\IdeaProjects\\P1-1-AD 2\\arquivosdir","productsº1");
+        System.out.println(borrar);
+
+        String Dborrar = borraDirectorio("C:\\Users\\Carlos SG\\IdeaProjects\\P1-1-AD 2\\arquivosdir");
+        System.out.println(Dborrar);
     }
 }
