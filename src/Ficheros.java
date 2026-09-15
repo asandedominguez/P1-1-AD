@@ -49,10 +49,8 @@ public class Ficheros {
                 return "Creado con exito";
             }
 
-        } else {
-            return "La ruta no existe";
         }
-        return "";
+        return "La ruta no existe";
     }
 
     public static String modoAcceso(String dirName, String fileName) {
