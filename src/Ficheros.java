@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
@@ -121,5 +123,18 @@ public class Ficheros {
         return "";
     }
 
+    public static void main (String [] args) throws IOException{
+        String arquivosdir = creaDirectorio("arquivosdir");
+        String comprobar = eDirectorio("arquivosdir");
 
+        String Products1 = creaFicheiro("arquivosdir", "productsº1");
+
+        String subdir = creaDirectorio("/home/dam26/IdeaProjects/Practica 1 AD/arquivosdir/subdir");
+        String Products2 = creaFicheiro("/home/dam26/IdeaProjects/Practica 1 AD/arquivosdir/subdir", "Products2");
+
+        String amosar = mContido("/home/dam26/IdeaProjects/Practica 1 AD/arquivosdir");
+
+        String permisos = modoAcceso("arquivosdir", "products1");
+        String longitud = calcularLonxitude("arquivosdir", "products1");
+    }
 }
