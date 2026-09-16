@@ -72,8 +72,10 @@ public class Ficheros {
 
     public static String calcularLonxitude(String dirName, String fileName) {
         File fichero3 = new File (dirName, fileName);
-        System.out.println(fichero3.length()); ;
-        return "";
+        if (fichero3.exists()) {
+            System.out.println(fichero3.length());
+        }
+        return "No existe";
     }
 
     public static String mLectura(String dirName, String fileName) {
