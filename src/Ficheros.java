@@ -105,27 +105,41 @@ public class Ficheros {
     }
 
     public static String borrarFichero(String dirName, String fileName) {
-        File fichero5 = new File (dirName, fileName);
+        File fichero5 = new File(dirName, fileName);
+
         if (fichero5.exists()) {
-            fichero5.delete();
-            return "Borrado correctamente";
+            if (fichero5.delete()) {
+                return "Borrado correctamente";
+            }
+            else {
+                return "No se pudo borrar";
+            }
         }
-        return "No existe";
+        return "Fichero inexistente";
     }
 
     public static String borraDirectorio(String dirName) {
-        File fichero6 = new File (dirName);
+        File fichero6 = new File(dirName);
         if (fichero6.exists()) {
-            fichero6.delete();
-            return "Borrado con exito";
+            if (fichero6.delete()) {
+                return "Borrado correctamente";
+            }
+            else {
+                return "No se pudo borrar";
+            }
         }
-        return "Ruta inexistente o con descendencia";
+        return "Ruta inexistente";
     }
 
     public static String mContido(String dirName) {
-        File fichero7 = new File (dirName);
-        System.out.println(Arrays.toString(fichero7.list()));
-        return "";
+        File fichero7 = new File(dirName);
+
+        if (fichero7.exists() && fichero7.isDirectory()) {
+            System.out.println(Arrays.toString(fichero7.list()));
+            return "Contenido mostrado";
+        } else {
+            return "No existe el directorio";
+        }
     }
 
     public static void main (String [] args) throws IOException{
