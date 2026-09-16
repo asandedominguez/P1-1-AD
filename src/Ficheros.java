@@ -95,9 +95,11 @@ public class Ficheros {
         File fichero4 = new File (dirName, fileName);
         if (fichero4.exists()) {
             if (fichero4.setWritable(true)) {
-                return "Se escribe correctamente";
+                return "Permiso de escritura establecido";
             }
-            return "No se puede escribir";
+            else {
+                return "No se puede cambiar el permiso";
+            }
         }
         return "No existe";
     }
