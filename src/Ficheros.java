@@ -82,7 +82,10 @@ public class Ficheros {
         File fichero3 = new File (dirName, fileName);
         if (fichero3.exists()) {
             if (fichero3.setReadOnly()) {
-                return "Creado con exito";
+                return "Cambiado a solo lectura";
+            }
+            else {
+                return "No se pueden cambiar los permisos de este fichero";
             }
         }
         return "No existe";
